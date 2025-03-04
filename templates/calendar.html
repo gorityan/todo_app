@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>カレンダー - ToDoリスト</title>
+    <!-- FullCalendar CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet" />
+    <style>
+      body {
+        padding: 20px;
+        background-color: #f8f9fa;
+      }
+      #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center mb-4">ToDoリストのカレンダー</h1>
+    <div id="calendar"></div>
+    <div class="text-center mt-4">
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">戻る</a>
+    </div>
+    
+    <!-- FullCalendar JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          events: {{ events|tojson }}
+        });
+        calendar.render();
+      });
+    </script>
+  </body>
+</html>
