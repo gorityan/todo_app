@@ -26,7 +26,7 @@ _※スクリーンショットがある場合は、ここに追加してくだ�
 
 1. このリポジトリをクローンまたはダウンロードします
    ```
-   git clone https://github.com/yourusername/todo-list-app.git
+   git clone https://github.com/gorityan/todo-list-app.git
    cd todo-list-app
    ```
 
